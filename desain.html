@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/custom.min.css" />
     <style>
         /* Gaya tema desain Anda */
-   body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -31,15 +31,17 @@ header {
 }
 
 .portfolio-item {
-    margin-bottom: 1rem;
+    width: 25%;
+    margin: 0 0.5rem;
+    display: inline-block;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #f4f4f4;
 }
 
-.portfolio-item img {
-    width: 100%;
+.portfolio-item:nth-child(even) {
+    margin-left: 0;
 }
     </style>
 </head>
@@ -78,7 +80,18 @@ header {
             <h2>Proyek Desain 2</h2>
             <p>Deskripsi singkat tentang proyek desain ini.</p>
         </div>
-
+        
+        <div class="portfolio-item">
+            <img src="gambar3.jpg" alt="Deskripsi Gambar 3">
+            <h2>Proyek Desain 3</h2>
+            <p>Deskripsi singkat tentang proyek desain ini.</p>
+        </div>
+        
+        <div class="portfolio-item">
+            <img src="gambar4.jpg" alt="Deskripsi Gambar 4">
+            <h2>Proyek Desain 4</h2>
+            <p>Deskripsi singkat tentang proyek desain ini.</p>
+        </div>
         <!-- Tambahkan lebih banyak item portofolio sesuai kebutuhan -->
     </div>
 </body>
