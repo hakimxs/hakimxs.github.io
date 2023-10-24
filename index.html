@@ -18,11 +18,19 @@
 			/* Edit this with your name or anything else */
 			content: 'HakimXS';
 		}
-		.info {
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: 10px;
-		}
+		.Biodataku li {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.Biodataku li:first-child {
+  float: left;
+  vertical-align: middle;
+}
+
+.Biodataku li:last-child {
+  float: right;
+}
 	</style>
 </head>
 <body>
@@ -63,20 +71,21 @@
 			</div>
 		</div>
 	</div>
-		<div class="info">
-					<span>Nama :</span>
-					<span>Abdul Hakim</span>
-				</div>
-				
-				<div class="info">
-					<span>Nama :</span>
-					<span>Abdul Hakim</span>
-				</div>
-				
-				<div class="info">
-					<span>Nama :</span>
-					<span>Abdul Hakim</span>
-				</div>
+		<!-- Biodata -->
+	<div class="Biodataku" id="Biodata">
+  <div class="container">
+    <h1>Biodata</h1>
+    <ul class="Biodataku list-flat">
+      <li>Nama :</li>
+      <li>Abdul Hakim</li>
+    </ul>
+    <ul class="Biodataku">
+      <li>Tempat, Tanggal Lahir: </li>
+      <li>Tabunganen, 27 Oktober 2000</li>
+    </ul>
+  </div>
+</div>
+	
 	<!-- Award & Achievements -->
 	<div class="award section second" id="pendidikan">
 		<div class="container">
