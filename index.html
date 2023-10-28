@@ -155,7 +155,7 @@
         </ul>
         <ul class="skill-list list-flat">
             <li>Microsoft Excel</li>
-            <li>Data Cleansing, Sort & Filter, Aggragate Data, Conditional If-else, V lookup & Index match, Data Formatting, Data Visualization, Chart Excel, <a onclick="window.open('', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" href="http://www.google.com">Pop-up window</a></li>
+            <li>Data Cleansing, Sort & Filter, Aggragate Data, Conditional If-else, V lookup & Index match, Data Formatting, Data Visualization, Chart Excel, <a href="image.jpg" onclick="NewWindow(this.href,'name','500','500','yes');return false"><b>Pivot Table</b></a></li>
         </ul>
         <ul class="skill-list list-flat">
             <li>Desain</li>
@@ -196,5 +196,15 @@
 
 		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
     </script>
+	<script language="javascript">
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
 </body>
 </html>
