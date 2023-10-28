@@ -42,6 +42,40 @@
 	</style>
 </head>
 <body>
+	<a href="image.jpg" id="showPopup">Lihat Gambar</a>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js">function showPopup() {
+  // Buat elemen pop up
+  var popup = document.createElement("div");
+  popup.id = "popup";
+  popup.style.position = "absolute";
+  popup.style.top = "0";
+  popup.style.left = "0";
+  popup.style.width = "100%";
+  popup.style.height = "100%";
+  popup.style.zIndex = "100";
+
+  // Tambahkan gambar ke elemen pop up
+  var img = document.createElement("img");
+  img.src = "image.jpg";
+  popup.appendChild(img);
+
+  // Tambahkan tombol X untuk menutup pop up
+  var closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.onclick = function() {
+    popup.style.display = "none";
+  };
+  popup.appendChild(closeButton);
+
+  // Tampilkan elemen pop up
+  document.body.appendChild(popup);
+}
+
+// Bind event click ke link
+document.getElementById("showPopup").onclick = showPopup;
+</script>
 	<!-- Navigation -->
 	<div class="main-nav">
 		<div class="container">
@@ -162,37 +196,7 @@
 			</ul>
 		</div>
 	</div>
-function showPopup() {
-  // Buat elemen pop up
-  var popup = document.createElement("div");
-  popup.id = "popup";
-  popup.style.position = "absolute";
-  popup.style.top = "0";
-  popup.style.left = "0";
-  popup.style.width = "100%";
-  popup.style.height = "100%";
-  popup.style.zIndex = "100";
-
-  // Tambahkan gambar ke elemen pop up
-  var img = document.createElement("img");
-  img.src = "image.jpg";
-  popup.appendChild(img);
-
-  // Tambahkan tombol X untuk menutup pop up
-  var closeButton = document.createElement("button");
-  closeButton.textContent = "X";
-  closeButton.onclick = function() {
-    popup.style.display = "none";
-  };
-  popup.appendChild(closeButton);
-
-  // Tampilkan elemen pop up
-  document.body.appendChild(popup);
-}
-
-// Bind event click ke link
-document.getElementById("showPopup").onclick = showPopup;
-
+	
 	<!-- Quote -->
 	<div class="quote">
 		<div class="container text-centered">
