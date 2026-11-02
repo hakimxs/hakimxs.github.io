@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdul Hakim — Portofolio</title>
 <meta name="description" content="Portofolio Abdul Hakim: pengalaman organisasi, pendidikan, keahlian Microsoft Excel, dan desain grafis.">
-<meta name="theme-color" content="#0f766e">
+<meta name="theme-color" content="#0e0e0f">
 <meta property="og:title" content="Abdul Hakim — Portofolio">
 <meta property="og:description" content="Excel, desain grafis, dan pengalaman organisasi.">
 <meta property="og:image" content="img/hkm.jpg">
@@ -14,19 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f8faf9; --surface:#ffffff; --text:#0f1f1c; --muted:#5b6b67;
-    --line:#e2e9e6; --accent:#0f766e; --accent-soft:#d9f2ee; --shadow:0 8px 30px rgba(15,31,28,.08);
+    --bg:#0e0e0f; --surface:#161617; --text:#e9e7e7; --muted:#9a9697;
+    --line:#252324; --accent:#a63a42; --accent-soft:#1d1213; --shadow:0 8px 30px rgba(0,0,0,.45);
     --radius:18px;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0b1412; --surface:#121f1c; --text:#e8f1ee; --muted:#93a8a2;
-      --line:#1f302c; --accent:#2dd4bf; --accent-soft:#123a35; --shadow:0 8px 30px rgba(0,0,0,.4);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0b1412; --surface:#121f1c; --text:#e8f1ee; --muted:#93a8a2;
-    --line:#1f302c; --accent:#2dd4bf; --accent-soft:#123a35; --shadow:0 8px 30px rgba(0,0,0,.4);
+  :root[data-theme="light"]{
+    --bg:#faf7f7; --surface:#ffffff; --text:#141414; --muted:#6b6262;
+    --line:#ece3e3; --accent:#8f2a33; --accent-soft:#f6e9ea; --shadow:0 8px 30px rgba(20,20,20,.08);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;scroll-padding-top:80px}
@@ -59,7 +53,7 @@
   .btn.ghost{background:transparent;color:var(--accent)}
   .btn.ghost:hover{background:var(--accent-soft)}
   .avatar{justify-self:center;position:relative;width:min(320px,80%)}
-  .avatar::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 140deg,var(--accent),transparent 60%,var(--accent));opacity:.35;filter:blur(18px)}
+  .avatar::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 140deg,var(--accent),transparent 60%,var(--accent));opacity:.15;filter:blur(18px)}
   .avatar img{position:relative;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--surface);box-shadow:var(--shadow);background:var(--accent-soft)}
 
   /* Sections */
@@ -324,8 +318,7 @@
   const root = document.documentElement, btn = document.getElementById('themeBtn');
   try { const s = localStorage.getItem('theme'); if (s) root.dataset.theme = s; } catch(e){}
   btn.addEventListener('click', () => {
-    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
+    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
     try { localStorage.setItem('theme', root.dataset.theme); } catch(e){}
   });
 
