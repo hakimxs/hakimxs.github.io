@@ -1,200 +1,353 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-    <title>Portofolio Abdul Hakim</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portofolio Abdul Hakim">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/kube.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/custom.min.css" />
-    <link rel="shortcut icon" href="img/favicon.png" />
-	<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<style>
-		.intro h1:before {
-			/* Edit this with your name or anything else */
-			content: 'HakimXS';
-		}
-		#popup {
-  background-color: black;
-  opacity: 0.7;
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Hakim — Portofolio</title>
+<meta name="description" content="Portofolio Abdul Hakim: pengalaman organisasi, pendidikan, keahlian Microsoft Excel, dan desain grafis.">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="Abdul Hakim — Portofolio">
+<meta property="og:description" content="Excel, desain grafis, dan pengalaman organisasi.">
+<meta property="og:image" content="img/hkm.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8faf9; --surface:#ffffff; --text:#0f1f1c; --muted:#5b6b67;
+    --line:#e2e9e6; --accent:#0f766e; --accent-soft:#d9f2ee; --shadow:0 8px 30px rgba(15,31,28,.08);
+    --radius:18px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1412; --surface:#121f1c; --text:#e8f1ee; --muted:#93a8a2;
+      --line:#1f302c; --accent:#2dd4bf; --accent-soft:#123a35; --shadow:0 8px 30px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1412; --surface:#121f1c; --text:#e8f1ee; --muted:#93a8a2;
+    --line:#1f302c; --accent:#2dd4bf; --accent-soft:#123a35; --shadow:0 8px 30px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 
-#popup img {
-  width: 100%;
-  height: 100%;
-}
+  /* Nav */
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .brand{font-weight:700;color:var(--text);letter-spacing:-.01em}
+  .brand span{color:var(--accent)}
+  nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;overflow-x:auto}
+  nav a{display:block;padding:8px 12px;border-radius:999px;color:var(--muted);font-size:.92rem;font-weight:500;white-space:nowrap}
+  nav a:hover,nav a.active{background:var(--accent-soft);color:var(--accent)}
+  .theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;flex:none}
 
-#popup button {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+  /* Hero */
+  .hero{padding:72px 0 56px}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+  .salam{color:var(--muted);font-size:.95rem;margin:0 0 10px}
+  h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 16px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{font-size:1.1rem;color:var(--muted);max-width:54ch;margin:0 0 28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{filter:brightness(1.1)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent-soft)}
+  .avatar{justify-self:center;position:relative;width:min(320px,80%)}
+  .avatar::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 140deg,var(--accent),transparent 60%,var(--accent));opacity:.35;filter:blur(18px)}
+  .avatar img{position:relative;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--surface);box-shadow:var(--shadow);background:var(--accent-soft)}
 
-	</style>
+  /* Sections */
+  section{padding:64px 0}
+  .eyebrow{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+  h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.02em;margin:0 0 28px;line-height:1.2}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .bio dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 20px}
+  .bio dt{color:var(--muted);font-size:.9rem}
+  .bio dd{margin:0;font-weight:500}
+  .about-text p{margin:0 0 12px;color:var(--muted)}
+  .about-text p:last-child{margin:0}
+  .about-text strong{color:var(--text)}
+
+  /* Timeline */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .cols h3{margin:0 0 20px;font-size:1.1rem}
+  .timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+  .timeline li{position:relative;padding:0 0 24px 18px}
+  .timeline li:last-child{padding-bottom:0}
+  .timeline li::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .timeline .yr{font-size:.82rem;color:var(--accent);font-weight:600}
+  .timeline .t{font-weight:600;display:block}
+  .timeline .s{color:var(--muted);font-size:.92rem}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .skill .ic{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
+  .skill h3{margin:0 0 6px;font-size:1.1rem}
+  .skill p{margin:0 0 12px;color:var(--muted);font-size:.93rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+  .chips li{background:var(--accent-soft);color:var(--accent);padding:4px 12px;border-radius:999px;font-size:.8rem;font-weight:500}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .work{padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .work button{all:unset;cursor:zoom-in;display:block}
+  .work img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--accent-soft);transition:transform .4s}
+  .work button{overflow:hidden}
+  .work:hover img{transform:scale(1.04)}
+  .work .body{padding:18px 22px 22px}
+  .work h3{margin:0 0 6px;font-size:1.05rem}
+  .work p{margin:0;color:var(--muted);font-size:.92rem}
+
+  /* Cert */
+  .cert{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  .cert img{border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+
+  /* Contact */
+  .contact{text-align:center}
+  .contact p{color:var(--muted);max-width:52ch;margin:0 auto 24px}
+  .contact .cta{justify-content:center}
+
+  footer{padding:40px 0 48px;text-align:center;border-top:1px solid var(--line)}
+  .hadith{font-family:Amiri,serif;font-size:1.6rem;margin:0 0 6px}
+  footer small{color:var(--muted)}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  .lb.open{display:flex}
+  .lb img{max-height:90vh;border-radius:10px}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:800px){
+    .hero{padding-top:40px}
+    .hero .wrap,.about-grid,.cols,.cert{grid-template-columns:1fr}
+    .avatar{order:-1;width:200px}
+    .brand{display:none}
+    nav{flex:1;min-width:0}
+  }
+</style>
 </head>
 <body>
-	<!-- Navigation -->
-	<div class="main-nav">
-		<div class="container">
-			<header class="group top-nav">
-				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-				    <span class="logo">Portofolio</span>
-				</div>
-			    <nav id="navbar-1" class="navbar item-nav">
-				    <ul>
-				        <li class="active"><a href="#about">Tentang Saya</a></li>
-				        <li><a href="#organisasi">Pengalaman Organisasi</a></li>
-				        <li><a href="#pendidikan">Riwayat Pendidikan</a></li>
-				        <li><a href="#skills">Skills</a></li>
-				    </ul>
-				</nav>
-			</header>
-		</div>
-	</div>
 
-	<!-- Introduction -->
-	<div class="intro section" id="about">
-		<div class="container">
-			<p>Assalamualaikum Wr.Wb.,</p>
-			<div class="units-row units-split wrap">
-				<div class="unit-20">
-					<img src="img/hkm.jpg" alt="Avatar">
-				</div>
-				<div class="unit-80">
-					<h1>Hallo<br><span id="typed"></span></h1>
-				</div>
-				
-				<p>
-					Saya adalah seorang yang senang belajar hal baru, menyukai tantangan dan berkeinginan bermanfaat untuk orang lain.
-				</p>
-			</div>
-		</div>
-	</div>
-	<!-- Biodata -->
-	<div class="award section second" id="biodata">
-		<div class="container">
-			<h1>Biodata</h1>
-			<ul class="award-list list-flat">
-				<li>Nama</li>
-				<li>Abdul Hakim</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>Tempat, Tanggal Lahir</li>
-				<li>Tabunganen Tengah, 27 Oktober 2000</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>Jenis Kelamin</li>
-				<li>Laki-Laki</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>Kontak</li>
-				<li><a href="mailto:excalibur.hakim@gmail.com">Email</a> | <a href="https://wa.me/6281345490522">Whatsapp</a> | <a href="https://www.instagram.com/hakim.404" >Instagram</a> | <a href="https://t.me/Al_hakiiim" >Telegram</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- Award & Achievements -->
-	<div class="award section second" id="pendidikan">
-		<div class="container">
-			<h1>Riwayat<br>Pendidikan</h1>
-			<ul class="award-list list-flat">
-				<li>2012 - 2015</li>
-				<li>SMP Negeri 1 Tabunganen</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>2015 - 2018</li>
-				<li>SMA Negeri 1 Tabunganen</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>2018 - 2023</li>
-				<li>UIN Antasari Banjarmasin</li>
-				<li>Jurusan Studi Agama-Agama</li>
-			</ul>
-		</div>
-	</div>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Abdul<span>Hakim</span></a>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#perjalanan">Perjalanan</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#desain">Desain</a></li>
+        <li><a href="#sertifikat">Sertifikat</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Ganti tema">◐</button>
+  </div>
+</header>
 
-	<!-- Work Experience -->
-	<div class="work section second" id="organisasi">
-		<div class="container">
-			<h1>Pengalaman<br>Organisasi</h1>
-			<ul class="work-list list-flat">
-				<li>2018 - 2019</li>
-				<li>SSLK Al-Banjary</li>
-				<li>Anggota</li>
-			</ul>
-			<ul class="work-list list-flat">
-				<li>2019 - 2020</li>
-				<li>HMJ Studi Agama-Agama</li>
-				<li>Anggota</li>
-			</ul>
-			<ul class="work-list list-flat">
-				<li>2020 - 2021</li>
-				<li>HMJ Studi Agama-Agama</li>
-				<li>Ketua Bidang Pengembangan Media dan Informasi</li>
-			</ul>
-		</div>
-	</div>	
-
-	<!-- ... (kode HTML sebelumnya) ... -->
-
-<!-- Technical Skills -->
-<div class="skills section second" id="skills">
-    <div class="container">
-        <h1><br>Skill</h1>
-        <ul class="skill-list list-flat">
-            <li>Microsoft Office</li>
-            <li>Word / Power Point</li>
-        </ul>
-        <ul class="skill-list list-flat">
-            <li><a href="sertifikat">Microsoft Excel (Basic - Intermediate Level)</a></li>
-            <li><a href="sertifikat">Data Cleansing, Sort & Filter, Aggragate Data, Conditional If-else, V lookup & Index match, Data Formatting, Data Visualization, Chart Excel, Pivot Table.</a></li>
-        </ul>
-        <ul class="skill-list list-flat">
-            <li>Desain</li>
-            <li>Corel Draw / Adobe Ilustrator</li>
-            <li>Untuk beberapa Desain yang telah saya buat bisa diakses di <a href="desain.html">Desain Saya</a></li>
-        </ul>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="salam">Assalamualaikum Wr. Wb.</p>
+        <h1>Halo, saya <em>Abdul Hakim</em>.</h1>
+        <p class="lead">Saya senang belajar hal baru, menyukai tantangan, dan ingin bermanfaat bagi orang lain. Saya bekerja dengan data di Excel dan membuat desain grafis.</p>
+        <div class="cta">
+          <a class="btn primary" href="#desain">Lihat karya</a>
+          <a class="btn ghost" href="#kontak">Hubungi saya</a>
+        </div>
+      </div>
+      <div class="avatar">
+        <img src="img/hkm.jpg" alt="Foto Abdul Hakim" width="320" height="320">
+      </div>
     </div>
-</div>
-	
-	<!-- Quote -->
-	<div class="quote">
-		<div class="container text-centered">
-			<h1>خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ.</h1>
-		</div>
-	</div>
+  </section>
 
-	<footer>
-		<div class="container">
-			<div class="units-row">
-			    <div class="unit-50">
-					<ul class="social list-flat right">
-						<li><a href="mailto:excalibur.hakim@gmail.com"><i class="fa fa-send"></i></a></li>
-					</ul>
-			    </div>
-			</div>
-		</div>
-	</footer>
+  <section id="tentang">
+    <div class="wrap">
+      <p class="eyebrow">Tentang</p>
+      <h2>Sedikit tentang saya</h2>
+      <div class="about-grid">
+        <div class="card bio reveal">
+          <dl>
+            <dt>Nama</dt><dd>Abdul Hakim</dd>
+            <dt>Tempat, tanggal lahir</dt><dd>Tabunganen Tengah, 27 Oktober 2000</dd>
+            <dt>Jenis kelamin</dt><dd>Laki-laki</dd>
+            <dt>Pendidikan</dt><dd>UIN Antasari Banjarmasin, Studi Agama-Agama</dd>
+          </dl>
+        </div>
+        <div class="card about-text reveal">
+          <p>Latar belakang saya di <strong>Studi Agama-Agama</strong>, tetapi minat saya meluas ke <strong>pengolahan data</strong> dan <strong>desain grafis</strong>.</p>
+          <p>Saat menjabat di bidang media dan informasi organisasi kampus, saya mengerjakan logo, banner, dan konten visual. Dari situ saya belajar bahwa desain yang baik membuat informasi lebih mudah dipahami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- Javascript -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/typed.min.js"></script>
-    <script src="js/kube.min.js"></script>
-    <script src="js/site.js"></script>
-    <script>
-		function newTyped(){}$(function(){$("#typed").typed({
-		// Change to edit type effect
-		strings: ["I Am Abdul Hakim", "Nice to Meet You", ":)"],
+  <section id="perjalanan">
+    <div class="wrap">
+      <p class="eyebrow">Perjalanan</p>
+      <h2>Pendidikan &amp; pengalaman organisasi</h2>
+      <div class="cols">
+        <div class="reveal">
+          <h3>Riwayat pendidikan</h3>
+          <ul class="timeline">
+            <li><span class="yr">2018 – 2023</span><span class="t">UIN Antasari Banjarmasin</span><span class="s">Jurusan Studi Agama-Agama</span></li>
+            <li><span class="yr">2015 – 2018</span><span class="t">SMA Negeri 1 Tabunganen</span></li>
+            <li><span class="yr">2012 – 2015</span><span class="t">SMP Negeri 1 Tabunganen</span></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3>Pengalaman organisasi</h3>
+          <ul class="timeline">
+            <li><span class="yr">2020 – 2021</span><span class="t">HMJ Studi Agama-Agama</span><span class="s">Ketua Bidang Pengembangan Media dan Informasi</span></li>
+            <li><span class="yr">2019 – 2020</span><span class="t">HMJ Studi Agama-Agama</span><span class="s">Anggota</span></li>
+            <li><span class="yr">2018 – 2019</span><span class="t">SSLK Al-Banjary</span><span class="s">Anggota</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
-    </script>
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow">Skills</p>
+      <h2>Yang bisa saya kerjakan</h2>
+      <div class="skills">
+        <article class="card skill reveal">
+          <div class="ic">📊</div>
+          <h3>Microsoft Excel</h3>
+          <p>Level basic sampai intermediate, bersertifikat dari MySkill.ID.</p>
+          <ul class="chips">
+            <li>Data Cleansing</li><li>Sort &amp; Filter</li><li>Aggregate Data</li><li>IF Bersyarat</li>
+            <li>VLOOKUP</li><li>INDEX &amp; MATCH</li><li>Data Formatting</li><li>Data Visualization</li><li>Chart</li><li>Pivot Table</li>
+          </ul>
+        </article>
+        <article class="card skill reveal">
+          <div class="ic">🎨</div>
+          <h3>Desain grafis</h3>
+          <p>Logo, banner, ID card, tiket, sertifikat, frame Instagram, dan vektor art.</p>
+          <ul class="chips"><li>CorelDRAW</li><li>Adobe Illustrator</li><li>Infinite Design</li></ul>
+        </article>
+        <article class="card skill reveal">
+          <div class="ic">📝</div>
+          <h3>Microsoft Office</h3>
+          <p>Dokumen dan presentasi untuk keperluan organisasi dan akademik.</p>
+          <ul class="chips"><li>Word</li><li>PowerPoint</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="desain">
+    <div class="wrap">
+      <p class="eyebrow">Karya</p>
+      <h2>Portofolio desain</h2>
+      <div class="gallery">
+        <article class="card work reveal">
+          <button data-full="Proyek1.jpg" aria-label="Perbesar gambar: 43 Tahun Studi Agama-Agama"><img src="Proyek1.jpg" alt="Desain 43 Tahun Studi Agama-Agama" loading="lazy"></button>
+          <div class="body">
+            <h3>43 Tahun Studi Agama-Agama</h3>
+            <p>Proyek pertama saya: banner, logo, ID card, sertifikat, tiket, dan materi lainnya.</p>
+          </div>
+        </article>
+        <article class="card work reveal">
+          <button data-full="Proyek2.jpg" aria-label="Perbesar gambar: Pengembangan Media dan Informasi HMJ SAA"><img src="Proyek2.jpg" alt="Desain Pengembangan Media dan Informasi HMJ SAA" loading="lazy"></button>
+          <div class="body">
+            <h3>Pengembangan Media &amp; Informasi HMJ SAA</h3>
+            <p>Logo, launching kabinet, dan frame Instagram selama masa jabatan 7 April 2020 – 26 Maret 2021.</p>
+          </div>
+        </article>
+        <article class="card work reveal">
+          <button data-full="Hakim_vektor.jpg" aria-label="Perbesar gambar: Vektor Art"><img src="Hakim_vektor.jpg" alt="Karya vektor art" loading="lazy"></button>
+          <div class="body">
+            <h3>Vektor Art</h3>
+            <p>Beberapa karya vektor art yang dibuat dengan Infinite Design dan CorelDRAW.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sertifikat">
+    <div class="wrap">
+      <p class="eyebrow">Sertifikat</p>
+      <h2>Microsoft Excel</h2>
+      <div class="card cert reveal">
+        <img src="Sertifikat.jpg" alt="Sertifikat Microsoft Excel dari MySkill.ID" data-full="Sertifikat.jpg" loading="lazy">
+        <div>
+          <p>Sertifikat dari kursus Microsoft Excel di <a href="https://myskill.id" target="_blank" rel="noopener">MySkill.ID</a>.</p>
+          <p style="color:var(--muted);margin:0">Materi yang dipelajari: data cleansing, VLOOKUP, INDEX &amp; MATCH, pivot table, dan visualisasi data dengan chart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Kontak</p>
+      <h2>Mari terhubung</h2>
+      <p>Terbuka untuk berdiskusi, berkolaborasi, atau sekadar berkenalan.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/6281345490522" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" href="https://t.me/Al_hakiiim" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn ghost" href="https://www.instagram.com/hakim.404" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="hadith" lang="ar" dir="rtl">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</p>
+    <small>© <span id="yr"></span> Abdul Hakim</small>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="Pratinjau gambar"><img alt=""></div>
+
+<script>
+  // Tema
+  const root = document.documentElement, btn = document.getElementById('themeBtn');
+  try { const s = localStorage.getItem('theme'); if (s) root.dataset.theme = s; } catch(e){}
+  btn.addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch(e){}
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Lightbox
+  const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('[data-full]').forEach(el => el.addEventListener('click', () => {
+    lbImg.src = el.dataset.full; lb.classList.add('open');
+  }));
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+  // Reveal & nav aktif
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const links = [...document.querySelectorAll('nav a')];
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  }), {rootMargin:'-45% 0px -50% 0px'});
+  links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+</script>
 </body>
 </html>
